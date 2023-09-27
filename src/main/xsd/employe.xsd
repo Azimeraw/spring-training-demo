@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="employee">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string" />
+                <xs:element name="department">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="departmentname" type="xs:string" />
+                            <xs:element name="address" type="xs:string" />
+                            <xs:element name="city" type="xs:string" />
+                            <xs:element name="country" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" name="experience">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="title" type="xs:string" />
+                            <xs:element name="note" type="xs:string" />
+                            <xs:element name="year" type="xs:unsignedByte" />
+                            <xs:element name="grade" type="xs:unsignedByte" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="employeeid" type="xs:unsignedInt" use="required" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
